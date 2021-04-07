@@ -1,5 +1,6 @@
 package com.example.midtermmakeup;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -11,10 +12,12 @@ public class News {
     public News(JSONObject body) throws JSONException  {
         title=body.getString("title");
         author=body.getString("author");
+
         description=body.getString("description");
         publishedAt=body.getString("publishedAt");
         urlToImage=body.getString("urlToImage");
         url=body.getString("url");
+//        author=body.getJSONArray("author").getJSONObject(0).getString("name").toString();
     }
 
     @Override

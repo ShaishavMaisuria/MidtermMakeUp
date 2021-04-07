@@ -26,9 +26,9 @@ public class MainActivity extends AppCompatActivity implements NewCategories.New
     }
 
     @Override
-    public void NewsSourceToSelectedNews(Source selectedSource) {
+    public void NewsSourceToSelectedNews(String selectedSourcename, String id) {
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.rootView, SelectedNews.newInstance(selectedSource) , "SourceCategories")
+                .replace(R.id.rootView, SelectedNews.newInstance(selectedSourcename,id) , "SourceCategories")
                 .addToBackStack(null)
                 .commit();
     }

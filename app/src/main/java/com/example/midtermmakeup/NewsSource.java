@@ -186,7 +186,8 @@ class NewsSourcesAdapter extends RecyclerView.Adapter<NewsSourcesAdapter.NewsSou
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        mListener.NewsSourceToSelectedNews(eachSource);
+                        Log.d(TAG," chlo id"+eachSource.id);
+                        mListener.NewsSourceToSelectedNews(eachSource.name,eachSource.id);
                     }
                 });
             }
@@ -215,7 +216,7 @@ class NewsSourcesAdapter extends RecyclerView.Adapter<NewsSourcesAdapter.NewsSou
     }
 
     interface NewsSourceListener {
-        void NewsSourceToSelectedNews(Source selectedSource);
+        void NewsSourceToSelectedNews(String selectedSourceName,String id);
     }
 
 }
